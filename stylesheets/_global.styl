@@ -1,0 +1,99 @@
+global-reset()
+
+// Variables {{{
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+content-width = 1100px
+body-font = 'Helvetica Neue', Helvetica, Arial, sans-serif
+script-font = 'Pinyon Script', cursive
+black = #464848
+blue = #4576AF
+yellow = #FBF6AE
+gray = #8A8A8A
+gray-bd = #949599
+gray-txt = #9B9B9B
+maroon = #C15467
+purple = #3E4084
+off-white = #fafafa
+red = #941F1F
+
+// }}} END Variables
+
+// Mixins {{{
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Calculate a px amount as a percentage
+// Note that the '' are necessary to cast as a percentage
+pct(number)
+  unit(number / content-width * 100, '%')
+
+// Create a downwards triangle
+triangle-down(color = red, w = 50px, h = 25px)
+  position relative
+  &:after
+    content ''
+    width 0
+    height 0
+    border-left (w/2) solid transparent
+    border-right (w/2) solid transparent
+    border-top h solid color
+    {block}
+
+
+// }}} END Mixins
+
+// General {{{
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+*
+  box-sizing border-box
+
+html
+  min-height 100%
+
+body
+  font-family body-font
+  background linear-gradient(top, #fefefe, red);
+  color black
+  font-size 18px
+
+img
+  max-width 100%
+  width auto
+
+// }}} END General
+
+// Generated Styles
+// You will likely want to change these
+
+h1
+  margin-top 100px
+  font-weight 500
+  font-size 68px
+  margin-bottom 20px
+
+.script
+  font-family script-font
+
+footer
+  margin-top 200px
+
+.container
+  center(content-width, pct(20))
+  padding-top 100
+  text-align center
+
+.copy
+  color lighten(gray, 60%)
+
+.logo
+  text-align center
+  margin 50px 0
+
+.bobbles
+  width 600px
+  margin 0 auto
+.left
+  float left
+.right
+  float right
