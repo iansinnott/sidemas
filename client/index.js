@@ -1,3 +1,9 @@
+var $   = require('jquery')
+    app = require('./app');
+
 // Run the app
-require('./app').initialize();
+$(app.initialize.bind(app));
+
+window.app = app;
+
 
