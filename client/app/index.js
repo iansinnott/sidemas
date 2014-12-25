@@ -19,6 +19,7 @@ module.exports = {
     this.mid   = svg.selectAll('.mid');
     this.dark  = svg.selectAll('.dark');
 
+    this.run();
   },
 
   colorRandom: function(elts, initialColor) {
